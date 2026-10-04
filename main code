@@ -1,0 +1,74 @@
+
+# The Mystery of the Real Christmas Gift
+# Your little bro's Christmas text adventure 🎄🎁
+
+def get_choice(prompt, choices):
+    while True:
+        answer = input(prompt).strip().lower()
+        if answer in choices:
+            return answer
+        print("Please choose: " + ", ".join(choices))
+
+print("\n🎄 THE MYSTERY OF THE REAL CHRISTMAS GIFT 🎄")
+print("Christmas morning has arrived...")
+print("But there's a problem: your little bro's REAL gift is missing!")
+print("A series of clues will lead him to the secret hiding spot.\n")
+
+name = input("What is your little bro's name? ").strip() or "Little Bro"
+
+print(f"\n{name} walks into the living room and spots three clues.")
+print("1. A trail of wrapping paper")
+print("2. A Christmas stocking with something inside")
+print("3. A mysterious note under the tree")
+
+choice = get_choice("\nWhich clue should he investigate? (1/2/3): ", ["1", "2", "3"])
+
+if choice == "1":
+    print("\n🎁 He follows the wrapping paper down the hallway.")
+    print("It leads to the kitchen, where he finds a note:")
+    print('"Where cookies disappear, the next clue will appear!"')
+    print("He checks the cookie jar and finds a tiny golden key.")
+
+    choice2 = get_choice(
+        "\nWhere should he use the key? (1) Closet (2) Garage (3) Bedroom: ",
+        ["1", "2", "3"]
+    )
+
+    if choice2 == "3":
+        print("\n🔑 The key opens the door to the bedroom!")
+        print("Inside, another note says:")
+        print('"You are VERY close... find the coziest place in the room."')
+        print("He looks around and spots the bed.")
+        print("\n🛏️ He lifts the blanket on the bed...")
+        print("There it is!")
+        print("\n🎉 HE FOUND THE REAL CHRISTMAS GIFT! 🎉")
+    else:
+        print("\nThe key doesn't fit there!")
+        print("A tiny Santa hat falls out with one last clue:")
+        print('"Try the bedroom!"')
+        print("He runs to the bedroom and checks the bed.")
+        print("\n🛏️ Under the blanket is a present with his name on it!")
+        print("\n🎉 HE FOUND THE REAL CHRISTMAS GIFT! 🎉")
+
+elif choice == "2":
+    print("\n🧦 He checks the Christmas stocking.")
+    print("Inside he finds a candy cane and a folded note.")
+    print('"Look where you sleep..."')
+    print("He immediately runs to the bedroom.")
+    print("\n🛏️ He checks the bed and lifts the blanket.")
+    print("A present is sitting there with his name on it!")
+    print("\n🎉 HE FOUND THE REAL CHRISTMAS GIFT! 🎉")
+
+else:
+    print("\n📝 He picks up the note under the tree.")
+    print('It says: "Your gift is hiding somewhere you feel cozy."')
+    print("He thinks about it...")
+    print("Then he realizes exactly where to look.")
+    print("\n🛏️ He runs to the bedroom and checks the bed.")
+    print("Under the blanket is a giant Christmas present!")
+    print("\n🎉 HE FOUND THE REAL CHRISTMAS GIFT! 🎉")
+
+print(f"\n🎄 QUEST COMPLETE, {name}! 🎄")
+print("You found the REAL Christmas gift!")
+print("Now go enjoy your present! 🎁")
+input("\nPress Enter to exit...")
